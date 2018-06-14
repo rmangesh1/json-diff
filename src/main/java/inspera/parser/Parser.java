@@ -1,3 +1,5 @@
+package inspera.parser;
+
 import net.sf.json.JSONObject;
 
 /**

@@ -1,3 +1,4 @@
+import inspera.parser.Parser;
 import org.junit.Before;
 
 /**
