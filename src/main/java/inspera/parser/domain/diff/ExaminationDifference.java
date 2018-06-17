@@ -1,4 +1,4 @@
-package inspera.parser.domain;
+package inspera.parser.domain.diff;
 
 import java.util.List;
 import java.util.Objects;
@@ -11,6 +11,14 @@ public class ExaminationDifference {
     private List<MetaDiff> metaDiff;
 
     private CandidateDifference candidateDifference;
+
+    public ExaminationDifference() {
+    }
+
+    public ExaminationDifference(List<MetaDiff> metaDiff, CandidateDifference candidateDifference) {
+        this.metaDiff = metaDiff;
+        this.candidateDifference = candidateDifference;
+    }
 
     public List<MetaDiff> getMetaDiff() {
         return metaDiff;

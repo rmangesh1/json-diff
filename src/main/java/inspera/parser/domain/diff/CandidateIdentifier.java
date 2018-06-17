@@ -1,4 +1,4 @@
-package inspera.parser.domain;
+package inspera.parser.domain.diff;
 
 import java.util.Objects;
 

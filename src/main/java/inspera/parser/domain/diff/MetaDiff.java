@@ -1,6 +1,9 @@
-package inspera.parser.domain;
+package inspera.parser.domain.diff;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 
 import java.util.Objects;
 
@@ -11,11 +14,13 @@ public class MetaDiff {
 
     private String field;
 
+    @JsonSerialize(using = ToStringSerializer.class)
     @JsonProperty("before")
-    private String beforeValue;
+    private Object beforeValue;
 
+    @JsonSerialize(using = ToStringSerializer.class)
     @JsonProperty("after")
-    private String afterValue;
+    private Object afterValue;
 
     public String getField() {
         return field;
@@ -25,19 +30,19 @@ public class MetaDiff {
         this.field = field;
     }
 
-    public String getBeforeValue() {
+    public Object getBeforeValue() {
         return beforeValue;
     }
 
-    public void setBeforeValue(String beforeValue) {
+    public void setBeforeValue(Object beforeValue) {
         this.beforeValue = beforeValue;
     }
 
-    public String getAfterValue() {
+    public Object getAfterValue() {
         return afterValue;
     }
 
-    public void setAfterValue(String afterValue) {
+    public void setAfterValue(Object afterValue) {
         this.afterValue = afterValue;
     }
 
