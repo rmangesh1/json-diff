@@ -1,5 +1,7 @@
 package inspera.parser.domain.diff;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -8,8 +10,10 @@ import java.util.Objects;
  */
 public class ExaminationDifference {
 
+    @JsonProperty("meta")
     private List<MetaDiff> metaDiff;
 
+    @JsonProperty("candidates")
     private CandidateDifference candidateDifference;
 
     public ExaminationDifference() {

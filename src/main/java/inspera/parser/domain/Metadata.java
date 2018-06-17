@@ -3,9 +3,11 @@ package inspera.parser.domain;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
-import inspera.parser.deserializer.DateTimeDeserializer;
+import inspera.parser.deserializer.GeneralDateTimeDeserializer;
+import inspera.parser.serializer.GeneralDateTimeSerializer;
 
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 
 /**
@@ -15,12 +17,8 @@ public class Metadata {
 
     private String title;
 
-    @JsonSerialize(using = ToStringSerializer.class)
-    @JsonDeserialize(using = DateTimeDeserializer.class)
     private LocalDateTime startTime;
 
-    @JsonSerialize(using = ToStringSerializer.class)
-    @JsonDeserialize(using = DateTimeDeserializer.class)
     private LocalDateTime endTime;
 
     public String getTitle() {

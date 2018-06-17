@@ -1,6 +1,8 @@
 package inspera.parser.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.Objects;
 
@@ -57,11 +59,17 @@ public class Candidate {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Candidate{");
+        /*final StringBuilder sb = new StringBuilder("Candidate{");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
         sb.append(", extraTime=").append(extraTime);
         sb.append('}');
-        return sb.toString();
+        return sb.toString();*/
+        try {
+            return new ObjectMapper().writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }

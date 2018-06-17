@@ -14,11 +14,9 @@ public class MetaDiff {
 
     private String field;
 
-    @JsonSerialize(using = ToStringSerializer.class)
     @JsonProperty("before")
     private Object beforeValue;
 
-    @JsonSerialize(using = ToStringSerializer.class)
     @JsonProperty("after")
     private Object afterValue;
 
